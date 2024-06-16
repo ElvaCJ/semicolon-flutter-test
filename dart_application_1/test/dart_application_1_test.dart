@@ -2,90 +2,86 @@ import 'package:dart_application_1/dart_application_1.dart';
 import 'package:test/test.dart';
 
 void main() {
-  // 문제1 출력
-  print(add(2, mul(3, /*  빈칸  */))); 
-  print(mul(add(/*  빈칸  */, 3), 5)); 
+  // 문제 1 더 큰 수를 찾는 함수
+  int num1 = 1;
+  int num2 = 2;
+  print("$num1과 $num2 중에 더 큰 수는 ${"여기에 함수를 작성하세요"}입니다!");
 
-  // 문제2 출력
-  
-  // 문제3 출력
+  // 문제 2 지정된 범위 합을 구하는 함수
+  int startNum = 3;
+  int endNum = 10;
+  print("[$startNum, $endNum] 범위의 숫자 합은 ${"여기에 함수를 작성하세요"}");
 
-  // 문제4 출력
-  final int num = 4;
-  int temp = /*  빈칸  */;
-  
-  for (int i = 1; i <= /*  빈칸  */; i++) {
-    temp = temp * /*  빈칸  */;
-  }
-  print(temp);
+  // 문제 3 sec 시간을 다른 형식으로 바꿔 출력하는 함수
+  int secInput = 4500;
+  secToTime(secInput);
 
+  // 문제 4 리스트 데이터와 반복문 연습
+  final List<int> nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  print(reversedList(nums));
 
-  // 문제 5 조건 및 출력
-  List<int> values = [3, 4, 16, 7, 5, 8, 11, 35, -3, 88, 34, 74];
-  int max = values[/*  빈칸  */];
+  // 문제 5
+  List<User> users = [
+    User("Tom", 15),
+    User("Jason", 21),
+    User("Siri", 46),
+    User("Choi", 33),
+    User("Park", 55),
+  ];
 
-  for (int i = 0; i < values./*  빈칸  */ ; i++) {
-    if (max < values[/*  빈칸  */]) {
-      max = values[i];
-    }
-  }
-  
-  print(max);
+  // 하단의 문제를 읽고 평균 나이, 가장 나이가 많은 회원을 찾아서 출력해보세요
+  // 계산 코드는 여기에!
 }
 
-/* 문제 1 함수정의
-  덧셈을 수행하는 함수와 곱셈을 수행하는 함수를 정의한다
-  덧셈 함수와 곱셈 함수를 이용해서 "2 + (3 * 5)"를 계산해본다
-  덧셈 함수와 곱셈 함수를 이용해서 "(2 + 3) * 5"를 계산해본다
-  */
-int add(int a, int b) {
-  return /*  빈칸  */ + b;
-}
-
-int mul(int a, int b) {
-  return a /*  빈칸  */ b;
-}
-
-/* 문제 2 Optional positional 매개변수와 Named 매개변수
-- 건물의 크기는 (층수 x 한 층의 높이 x 한 층의 가로길이 x 한 층의 세로길이)로 정의된다
-- 따라서 건물의 크기를 계산하는 함수는 매개변수로 가로길이(width) 세로길이(depth) 높이(height) 층수(floors)를 받는다
-- 이때 모든 건물은 가로길이와 세로길이가 필수적임으로 width와 depth는 required positional 매개변수이다
-- height와 floors는 default optional positional 매개변수로 각각의 default값은 2m와 1층으로 한다
-- 해당 함수를 정의해서 가로길이가 10m 세로길이가 20m 높이가 2.2m 높이가 20층인 건물의 크기를 계산해보자
-- 해당 함수를 Named 매개변수를 사용해서 다시 정의해보자
- */
-double sizeOfBuilding(double width, double depth, [double height=/*  빈칸  */, int floors=/*  빈칸  */]) {
-  return width * /*  빈칸  */ * height * /*  빈칸  */;
-}
-
-/* 문제 3  조건문 연습하기
-- 대학교에서 점수에 따라 절대평가로서 학점을 주는 함수를 작성한다
-- 해당 함수는 int score를 매개변수로 한다
-- 해당 함수는 if문을 사용해서 90 ~ 100점은 A 80 ~ 89점은 B 70 ~ 79점은 C 60 ~ 69점은 D 나머지는 F를 출력한다
-- main함수에서 score(점수)을 호출했을 때 적절한 학점이 출력됨을 확인해보자
-- 해당 문제의 난이도가 낮은 경우 if문만으로 해당 함수를 작성해보도록 하자
-- 위 함수를 if문이 아닌 switch문 반을 이용해서 작성해보도록 하자
+/*  문제 1 
+두 수가 주어졌을 때 더 큰 수를 반환하는 함수를 작성하자
+해당 함수의 매개변수는 정수 두개이다
+해당 함수의 반환값은 매개변수로 받은 두 수 중에서 더 큰 수 이다
+아래 Base Code의 main함수 내에 선언된 num1과 num2의 값을 바꿔보며 프로그램이 잘 동작하는 지 확인하자
 */
-void score2Grade(int score) {
-  if (/*  빈칸  */ <= score) {
-    print("A");
-  } else if (80 <= score) {
-    print("/*  빈칸  */");
-  } else if (70 <= score) {
-    print("C");
-  } else if (/*  빈칸  */ <= score) {
-    print("D");
-  } else {
-    print("/*  빈칸  */");
-  }
+//함수는 여기에 작성하세요
+
+/*  문제 2
+닫힌 정수 범위가 주어졌을 때 해당 범위의 숫자들을 모두 더하는 함수를 작성하자
+해당 함수의 매개변수는 정수 두개로 각각 범위의 시작과 끝 숫자를 나타낸다
+해당 함수의 반환값은 해당 범위의 숫자들을 모두 더한 정수 값이다
+아래 Base Code의 main함수 내에 선언된 startNum과 endNum의 값을 바꿔보며 프로그램이 잘 작동하는 지 확인하자
+*/
+//함수는 여기에 작성하세요
+
+/* 문제 3  
+초가 주어졌을 때 이를 시:분:초 형태로 출력하는 함수를 완성하자
+해당 함수의 매개변수는 초를 의미하는 정수이다
+해당 함수의 반환값은 없다
+해당 함수는 초를 시:분:초 형태로 변환해서 출력한다.
+아래 Base Code의 main함수 내에 선언된 secInput값을 바꿔보며 프로그램이 잘 작동하는 지를 확인하자
+*/
+void secToTime(int secInput) {
+  // 여기에 코드를 작성해서 함수를 완성하세요
+
+  print("${"~~"}초는 ${"~~"}:${"~~"}:${"~~"}입니다!");
 }
 
-/* 문제4 반복문(1)
-반복문을 사용하여 팩토리얼을 계산해보자
- */
+/* 문제4
+main함수에서 주어진 길이가 10짜리 리스트를 역순으로 만들어서 출력하는 함수를 만들고 
+void main(){}에서 정답을 출력해보자
+*/
+List<int> reversedList(List<int> nums) {
+  List<int> reversedList = [];
 
-/* 문제5 반복문(2)
-List에 저장된 값을 선형탐색하여 최대값을 찾아보자
- */
+  return reversedList;
+}
 
-// 문제 4, 5는 void main 안에서 작성해봅니다~
+/* 문제5 
+회원정보를 위한 class User를 정의한다
+리스트에는 User class를 이용해서 사용자 정보(이름, 나이)가 저장되어있다.
+해당 리스트에 저장된 사용자정보를 분석해서 평균 나이를 계산해서 출력해본다
+그리고 나이가 가장 많은 회원의 이름을 출력해본다
+회원정보를 위한 class User는 회원의 이름과 나이 정보를 저장한다
+ */
+class User {
+  String name;
+  int age;
+
+  User(this.name, this.age);
+}
