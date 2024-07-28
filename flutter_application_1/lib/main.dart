@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import './ex1_0728.dart';
 import './ex2_0728.dart';
 import './ex3_0728.dart';
+import './add.dart';
 
 void main() {
   runApp(
@@ -10,7 +11,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => ColorModel1()),
         ChangeNotifierProvider(create: (context) => ColorModel2()),
-        //ChangeNotifierProvider(create: (context) => ContactModel()),
+        ChangeNotifierProvider(create: (context) => ContactModel()),
       ],
       child: const MyApp(),
     ),
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/exam1': (context) => const InteractiveButton1(),
         '/exam2': (context) => const InteractiveButton2(),
-        //'/exam3': (context) => const ContactList(),
+        '/exam3': (context) => const ContactList(),
+        '/add': (context) => const AddContact(),
       },
     );
   }
