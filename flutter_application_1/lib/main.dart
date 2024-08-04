@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import './ex1_0728.dart';
-import './ex2_0728.dart';
 import './ex3_0728.dart';
 import './add.dart';
+import './calculator.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => ColorModel1()),
-        ChangeNotifierProvider(create: (context) => ColorModel2()),
+        ChangeNotifierProvider(create: (context) => CalculatorFnc()),
         ChangeNotifierProvider(create: (context) => ContactModel()),
       ],
       child: const MyApp(),
@@ -26,8 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: const HomePage(),
       routes: {
-        '/exam1': (context) => const InteractiveButton1(),
-        '/exam2': (context) => const InteractiveButton2(),
+        '/exam1': (context) => const Calculator(),
         '/exam3': (context) => const ContactList(),
         '/add': (context) => const AddContact(),
       },
@@ -66,47 +63,20 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // TextField(
-            //   controller: _controllerText,
-            //   decoration: const InputDecoration(
-            //     prefixIcon: Icon(Icons.arrow_forward_outlined),
-            //     hintText: 'semicolon 이라고 입력해보세요',
-            //     enabledBorder: OutlineInputBorder(
-            //       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            //       borderSide: BorderSide(width: 1, color: Colors.grey),
-            //     ),
-            //     focusedBorder: OutlineInputBorder(
-            //       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            //       borderSide: BorderSide(width: 2, color: Colors.blue),
-            //     ),
-            //   ),
-            // ),
-            const SizedBox(
-              height: 20,
-            ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/exam1');
+                Navigator.pushNamed(context, '/exam3');
               },
-              child: const Text('Exam1 이동'),
+              child: const Text('지난주 Exam3 숙제'),
             ),
             const SizedBox(
               height: 10,
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/exam2');
+                Navigator.pushNamed(context, '/exam1');
               },
-              child: const Text('Exam2 이동'),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/exam3');
-              },
-              child: const Text('Exam3 이동'),
+              child: const Text('계산기 실습'),
             ),
           ],
         ),
