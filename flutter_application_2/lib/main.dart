@@ -55,12 +55,24 @@ class ColorModel extends ChangeNotifier {
 
   Future<void> initColor() async {
     // SharedPreferences 패키지를 통해 인스턴스(이름은 store)를 만들고 로컬스토리지 객체에 정보를 저장해봅시다!
+    SharedPreferences store = await SharedPreferences.getInstance();
     // 그런 다음 store에 저장된 boolean 값을 get해와서 값을 판단하고 다시 set해주는 로직을 짜봅시다.
+    if (store.getBool("dark") == null) {
+      store.setBool("dark", false);
+    } else {
+      isDark = store.getBool("dark") ?? false;
+    }
+
+    notifyListeners();
   }
 
   Future<void> toggleTheme() async {
     // 여기서도 SharedPreferences 인스턴스(이름은 동일하게 store)를 만들고 로컬스토리지 객체에 정보를 저장해봅시다!
+    SharedPreferences store = await SharedPreferences.getInstance();
     // 그런 다음 isDark의 값을 반전시켜 테마 모드를 전환하는 코드를 짜고 store에 setBool로 값을 업데이트해줍니다.
+    isDark = !isDark;
+    store.setBool("dark", isDark);
     // notifyListeners도 잊으면 안되겠죠? :)
+    notifyListeners();
   }
 }
